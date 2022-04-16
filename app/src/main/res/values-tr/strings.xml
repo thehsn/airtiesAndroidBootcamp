@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">TravelApp</string>
+    <string name="category1">Hepsi</string>
+    <string name="settingYazi">Ayarlar</string>
+    <string name="romeYazi">Roma</string>
+    <string name="taiwanYazi">Tayvan</string>
+    <string name="albaniaYazi">Arnavutluk</string>
+    <string name="aciklamaYazi">Hawaii, Batı Amerika Birleşik Devletlerinde, Pasifik Okyanusunda ABD anakarasından yaklaşık 2.000 mil uzaklıkta bulunan bir eyalettir. Kuzey Amerika dışındaki tek eyalet, bir takımada olan ve tropiklerdeki tek eyalettir.</string>
+    <string name="tavsiyeYazi">Önerilenler</string>
+    <string name="konumYazi">Hawaii, Amerika Birleşik Devletleri</string>
+    <string name="kategoriYazi">Kategoriler</string>
+    <string name="seeYazi">Hepsini Gör</string>
+    <string name="popYazi">Popüler</string>
+    <string name="vilageYazi">Villa Tatili</string>
+    <string name="houseYazi">Yüzen Ev</string>
+
+</resources>
