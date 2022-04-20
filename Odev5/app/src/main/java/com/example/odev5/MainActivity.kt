@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.example.odev5.databinding.ActivityMainBinding
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
     private lateinit var tasarim:ActivityMainBinding
@@ -70,16 +71,25 @@ class MainActivity : AppCompatActivity() {
         }
 
         tasarim.buttonResult.setOnClickListener {
-            var result = 0
-            val numbers = ekran.split(" + ")
-            for (num in numbers){
-                Log.e("kontrol", num)
-                num.trim()
-                result += num.toInt()
+
+            if(ekran.isEmpty()){
+                Log.e("kontrol", "bos")
+                Snackbar.make(it, "Please enter a number", Snackbar.LENGTH_SHORT).show()
+
+            }else{
+                var result = 0
+                val numbers = ekran.split(" + ")
+                for (num in numbers){
+                    Log.e("kontrol", num)
+                    num.trim()
+                    result += num.toInt()
+                }
+                Log.e("kontrol", result.toString())
+                tasarim.textViewSonuc.text = result.toString()
+                ekran = ""
             }
-            Log.e("kontrol", result.toString())
-            tasarim.textViewSonuc.text = result.toString()
-            ekran = ""
+
+
         }
 
         tasarim.buttonClear.setOnClickListener {
