@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/anasayfaFragment"
+        android:icon="@drawable/anasayfa"
+        android:menuCategory="container"
+        android:title="Anasayfa" />
+    <item
+        android:id="@+id/kategorilerFragment"
+        android:icon="@drawable/ic_baseline_bento_24"
+        android:menuCategory="container"
+        android:title="Kategoriler" />
+    <item
+        android:icon="@drawable/ic_baseline_shopping_cart_24"
+        android:menuCategory="container"
+        android:title="Sepet" />
+    <item
+        android:icon="@drawable/ic_baseline_person_24"
+        android:menuCategory="container"
+        android:title="Hesabım" />
+    <item
+        android:icon="@drawable/ic_baseline_more_horiz_24"
+        android:menuCategory="container"
+        android:title="Daha Fazla" />
+</menu>
