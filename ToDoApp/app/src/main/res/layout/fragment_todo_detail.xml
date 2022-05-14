@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="todoDetayToolbarBaslik" type="String" />
+        <variable name="todoNesnesi" type="com.example.todoapp.entity.ToDos" />
+        <variable name="todoDetailFragment" type="com.example.todoapp.fragment.ToDoDetailFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".TodoDetailFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarTodoDetail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@{todoDetayToolbarBaslik}" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/buttonGuncelle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarTodoDetail">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextTodoAd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Yapılacak İş"
+                android:text="@{todoNesnesi.todo_ad}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/buttonGuncelle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:onClick="@{() -> todoDetailFragment.buttonGuncelle(todoNesnesi.todo_id,editTextTodoAd.getText().toString())}"
+            android:text="GÜNCELLE"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
