@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "840519904619",
+    "firebase_url": "https://egitim-62219-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "egitim-62219",
+    "storage_bucket": "egitim-62219.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:840519904619:android:146b365849329c3c82302e",
+        "android_client_info": {
+          "package_name": "com.example.fooddeliveryapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "840519904619-pelrr7uho4g1cjnp42jgbr2ln0fdv8tu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fooddeliveryapp",
+            "certificate_hash": "66a272733f4b4742f3e1d944360918b4486c1bc2"
+          }
+        },
+        {
+          "client_id": "840519904619-cvp38gg7mcr8e9oev1dmtohighnd848k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCh8ff7pfR6TJEhxjp2rjC5P7KYqjfZjtE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "840519904619-cvp38gg7mcr8e9oev1dmtohighnd848k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:840519904619:android:629a4a36eb03031e82302e",
+        "android_client_info": {
+          "package_name": "com.example.kisileruygulamasi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "840519904619-cvp38gg7mcr8e9oev1dmtohighnd848k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCh8ff7pfR6TJEhxjp2rjC5P7KYqjfZjtE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "840519904619-cvp38gg7mcr8e9oev1dmtohighnd848k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

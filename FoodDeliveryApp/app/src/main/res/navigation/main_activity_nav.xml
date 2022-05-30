@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/anasayfaFragment">
+
+    <fragment
+        android:id="@+id/anasayfaFragment"
+        android:name="com.example.fooddeliveryapp.fragment.AnasayfaFragment"
+        android:label="AnasayfaFragment"
+        tools:layout="@layout/fragment_anasayfa">
+        <action
+            android:id="@+id/action_anasayfaFragment_to_restoranFragment"
+            app:destination="@id/restoranFragment" />
+        <argument
+            android:name="user_id"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_anasayfaFragment_self"
+            app:destination="@id/anasayfaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/kesfetFragment"
+        android:name="com.example.fooddeliveryapp.fragment.KesfetFragment"
+        android:label="fragment_kesfet"
+        tools:layout="@layout/fragment_kesfet" />
+    <fragment
+        android:id="@+id/profilFragment"
+        android:name="com.example.fooddeliveryapp.fragment.ProfilFragment"
+        android:label="fragment_profil"
+        tools:layout="@layout/fragment_profil" >
+        <argument
+            android:name="user_id"
+            app:argType="string" />
+        <argument
+            android:name="email_id"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/kampanyalarFragment"
+        android:name="com.example.fooddeliveryapp.fragment.KampanyalarFragment"
+        android:label="fragment_kampanyalar"
+        tools:layout="@layout/fragment_kampanyalar" />
+    <fragment
+        android:id="@+id/sepetFragment"
+        android:name="com.example.fooddeliveryapp.fragment.SepetFragment"
+        android:label="fragment_sepet"
+        tools:layout="@layout/fragment_sepet" />
+    <fragment
+        android:id="@+id/restoranFragment"
+        android:name="com.example.fooddeliveryapp.fragment.RestoranFragment"
+        android:label="fragment_restoran"
+        tools:layout="@layout/fragment_restoran" >
+        <action
+            android:id="@+id/action_restoranFragment_to_urunDetayFragment"
+            app:destination="@id/urunDetayFragment"
+            app:popUpTo="@id/restoranFragment" />
+        <action
+            android:id="@+id/action_restoranFragment_to_anasayfaFragment"
+            app:destination="@id/anasayfaFragment" />
+        <argument
+            android:name="user_id"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/urunDetayFragment"
+        android:name="com.example.fooddeliveryapp.fragment.UrunDetayFragment"
+        android:label="fragment_urun_detay"
+        tools:layout="@layout/fragment_urun_detay" >
+        <argument
+            android:name="yemek"
+            app:argType="com.example.fooddeliveryapp.entity.Yemekler" />
+        <action
+            android:id="@+id/action_urunDetayFragment_to_restoranFragment"
+            app:destination="@id/restoranFragment" />
+        <argument
+            android:name="user_id"
+            app:argType="string" />
+    </fragment>
+</navigation>
