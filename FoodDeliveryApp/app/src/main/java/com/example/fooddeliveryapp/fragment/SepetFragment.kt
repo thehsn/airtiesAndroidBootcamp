@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.fooddeliveryapp.R
 import com.example.fooddeliveryapp.adapter.SepetAdapter
 import com.example.fooddeliveryapp.databinding.FragmentSepetBinding
@@ -29,9 +28,14 @@ class SepetFragment : Fragment() {
 
 
         viewModel.sepettekilerListesi.observe(viewLifecycleOwner){
-            Log.e("sepetfrag observeLive", it.size.toString())
-            val adapter = SepetAdapter(requireContext(), it, viewModel)
-            tasarim.sepetAdapter = adapter
+
+                Log.e("sepetfrag observeLive", it.size.toString())
+                val adapter = SepetAdapter(requireContext(), it, viewModel)
+                tasarim.sepetAdapter = adapter
+            if(it.isEmpty()) {
+                Log.e("SEPET BOS","++++++++++++++++++++++++++++++++++")
+            }
+
         }
 
         return tasarim.root

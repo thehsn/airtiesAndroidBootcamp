@@ -38,11 +38,6 @@
             app:argType="string" />
     </fragment>
     <fragment
-        android:id="@+id/kampanyalarFragment"
-        android:name="com.example.fooddeliveryapp.fragment.KampanyalarFragment"
-        android:label="fragment_kampanyalar"
-        tools:layout="@layout/fragment_kampanyalar" />
-    <fragment
         android:id="@+id/sepetFragment"
         android:name="com.example.fooddeliveryapp.fragment.SepetFragment"
         android:label="fragment_sepet"
@@ -62,6 +57,12 @@
         <argument
             android:name="user_id"
             app:argType="string" />
+        <argument
+            android:name="database_type"
+            app:argType="string" />
+        <argument
+            android:name="restoran"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/urunDetayFragment"
@@ -77,5 +78,14 @@
         <argument
             android:name="user_id"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/favorilerFragment"
+        android:name="com.example.fooddeliveryapp.fragment.FavorilerFragment"
+        android:label="fragment_favoriler"
+        tools:layout="@layout/fragment_favoriler" >
+        <action
+            android:id="@+id/action_favorilerFragment_to_restoranFragment"
+            app:destination="@id/restoranFragment" />
     </fragment>
 </navigation>

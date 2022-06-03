@@ -5,14 +5,14 @@ import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.appcompat.widget.SearchView
-import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.fooddeliveryapp.R
-import com.example.fooddeliveryapp.adapter.YemeklerAdapter
 import com.example.fooddeliveryapp.adapter.KampanyalarAdapter
+import com.example.fooddeliveryapp.adapter.MutfaklarAdapter
+import com.example.fooddeliveryapp.adapter.RestoranlarAdapter
 import com.example.fooddeliveryapp.databinding.FragmentAnasayfaBinding
 import com.example.kisileruygulamasi.viewmodel.AnasayfaFragmentViewModel
 
@@ -33,22 +33,15 @@ class AnasayfaFragment : Fragment(), SearchView.OnQueryTextListener {
         Log.e("anasayfafragment", user_id.toString())
 
         tasarim.kampanyaRv.layoutManager = StaggeredGridLayoutManager(1 ,StaggeredGridLayoutManager.HORIZONTAL)
-        //tasarim.anasayfaToolbarBaslik = "Yemekler"
-        //(activity as AppCompatActivity).setSupportActionBar(tasarim.topAppBar)
 
-
-        viewModel.kampanyalarListesi.observe(viewLifecycleOwner){
-            val adapterKampanya = KampanyalarAdapter(requireContext(),it,viewModel)
-            tasarim.kampanyalarAdapter = adapterKampanya
+        viewModel.restoranlarListesi.observe(viewLifecycleOwner){
+            tasarim.restoranlarAdapter = RestoranlarAdapter(requireContext(), it, viewModel, this)
         }
 
-
-        tasarim.bootcampRestoranCard.setOnClickListener {
-            Log.e("anasayfa","anasayfa to restoran user_id: ${user_id.toString()}")
-            val gecis = AnasayfaFragmentDirections.actionAnasayfaFragmentToRestoranFragment(userId = user_id!!)
-            Navigation.findNavController(it).navigate(gecis)
+        viewModel.mutfaklarListesi.observe(viewLifecycleOwner){
+            val adapter = MutfaklarAdapter(requireContext(),it,viewModel)
+            tasarim.mutfaklarAdapter = adapter
         }
-
 
         return tasarim.root
     }

@@ -10,13 +10,14 @@ import com.example.fooddeliveryapp.R
 import com.example.fooddeliveryapp.databinding.CardTasarimMutfaklarBinding
 import com.example.fooddeliveryapp.entity.Kampanyalar
 import com.example.fooddeliveryapp.entity.Mutfaklar
+import com.example.fooddeliveryapp.setSafeOnClickListener
 import com.example.fooddeliveryapp.viewmodel.KesfetFragmentViewModel
 import com.example.kisileruygulamasi.viewmodel.AnasayfaFragmentViewModel
 import com.squareup.picasso.Picasso
 
 class MutfaklarAdapter (var mContext: Context, // we need for inflating our layout
                         var mutfaklarListesi:List<Mutfaklar>, // livedata
-                        var viewModel:KesfetFragmentViewModel): RecyclerView.Adapter<MutfaklarAdapter.CardTasarimTutucu>() {
+                        var viewModel:AnasayfaFragmentViewModel): RecyclerView.Adapter<MutfaklarAdapter.CardTasarimTutucu>() {
 
     inner class CardTasarimTutucu(tasarim: CardTasarimMutfaklarBinding) : RecyclerView.ViewHolder(tasarim.root) {
         var tasarim: CardTasarimMutfaklarBinding
@@ -42,6 +43,10 @@ class MutfaklarAdapter (var mContext: Context, // we need for inflating our layo
         val t = holder.tasarim
         t.mutfakNesnesi = mutfak
         resimGoster(mutfak.mutfak_resim_adi!!, holder.tasarim)
+
+        t.materialCardView2.setSafeOnClickListener {
+            viewModel.restoranAra(mutfak.mutfak_adi!!)
+        }
 
     }
 

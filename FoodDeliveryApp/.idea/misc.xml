@@ -18,7 +18,7 @@
         <entry key="..\:/Users/deniz/Desktop/airties_bootcamp/FoodDeliveryApp/app/src/main/res/layout-w936dp/activity_login.xml" value="0.190625" />
         <entry key="..\:/Users/deniz/Desktop/airties_bootcamp/FoodDeliveryApp/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/deniz/Desktop/airties_bootcamp/FoodDeliveryApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/Users/deniz/Desktop/airties_bootcamp/FoodDeliveryApp/app/src/main/res/layout/activity_register.xml" value="0.264" />
+        <entry key="..\:/Users/deniz/Desktop/airties_bootcamp/FoodDeliveryApp/app/src/main/res/layout/activity_register.xml" value="0.2" />
         <entry key="..\:/Users/deniz/Desktop/airties_bootcamp/FoodDeliveryApp/app/src/main/res/layout/activity_signin.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/deniz/Desktop/airties_bootcamp/FoodDeliveryApp/app/src/main/res/layout/activity_signin_acrivity.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/deniz/Desktop/airties_bootcamp/FoodDeliveryApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.24010416666666667" />
@@ -28,6 +28,7 @@
         <entry key="..\:/Users/deniz/Desktop/airties_bootcamp/FoodDeliveryApp/app/src/main/res/layout/card_tasarim_mutfaklar.xml" value="0.6" />
         <entry key="..\:/Users/deniz/Desktop/airties_bootcamp/FoodDeliveryApp/app/src/main/res/layout/deneme.xml" value="0.264" />
         <entry key="..\:/Users/deniz/Desktop/airties_bootcamp/FoodDeliveryApp/app/src/main/res/layout/fragment_anasayfa.xml" value="0.25" />
+        <entry key="..\:/Users/deniz/Desktop/airties_bootcamp/FoodDeliveryApp/app/src/main/res/layout/fragment_favoriler.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/deniz/Desktop/airties_bootcamp/FoodDeliveryApp/app/src/main/res/layout/fragment_kampanyalar.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/deniz/Desktop/airties_bootcamp/FoodDeliveryApp/app/src/main/res/layout/fragment_kesfet.xml" value="0.264" />
         <entry key="..\:/Users/deniz/Desktop/airties_bootcamp/FoodDeliveryApp/app/src/main/res/layout/fragment_ozel_kampanya.xml" value="0.25" />
@@ -37,7 +38,7 @@
         <entry key="..\:/Users/deniz/Desktop/airties_bootcamp/FoodDeliveryApp/app/src/main/res/layout/fragment_signin.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/deniz/Desktop/airties_bootcamp/FoodDeliveryApp/app/src/main/res/layout/fragment_urun_detay.xml" value="0.264" />
         <entry key="..\:/Users/deniz/Desktop/airties_bootcamp/FoodDeliveryApp/app/src/main/res/layout/fragment_yemek_detay.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/deniz/Desktop/airties_bootcamp/FoodDeliveryApp/app/src/main/res/layout/sepet_card_tasarim.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/deniz/Desktop/airties_bootcamp/FoodDeliveryApp/app/src/main/res/layout/sepet_card_tasarim.xml" value="0.264" />
         <entry key="..\:/Users/deniz/Desktop/airties_bootcamp/FoodDeliveryApp/app/src/main/res/menu/bottom_bar_tasar.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/deniz/Desktop/airties_bootcamp/FoodDeliveryApp/app/src/main/res/menu/navigation_bar_tasarim.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/deniz/Desktop/airties_bootcamp/FoodDeliveryApp/app/src/main/res/menu/top_app_bar.xml" value="0.25416666666666665" />

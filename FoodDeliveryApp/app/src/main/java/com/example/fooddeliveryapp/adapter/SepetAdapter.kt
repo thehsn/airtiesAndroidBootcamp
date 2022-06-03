@@ -11,6 +11,7 @@ import com.example.fooddeliveryapp.databinding.CardTasarimBinding
 import com.example.fooddeliveryapp.databinding.SepetCardTasarimBinding
 import com.example.fooddeliveryapp.entity.SepetYemekler
 import com.example.fooddeliveryapp.entity.Yemekler
+import com.example.fooddeliveryapp.setSafeOnClickListener
 import com.example.fooddeliveryapp.viewmodel.SepetFragmentViewModel
 import com.squareup.picasso.Picasso
 
@@ -34,9 +35,71 @@ class SepetAdapter(var mContext:Context, var sepettekilerListesi:List<SepetYemek
         val sepetYemek = sepettekilerListesi.get(position)
         val t = holder.tasarim
         t.textViewYemekAd.text = sepetYemek.yemek_adi
-        t.textViewAdet.text = sepetYemek.yemek_siparis_adet.toString()
-
+        t.textViewNumber.text = sepetYemek.yemek_siparis_adet.toString()
+        t.textViewAdet.text = sepetYemek.yemek_fiyat.toString() + " ₺"
         resimGoster(sepetYemek.yemek_resim_adi,t)
+
+        val sepetteki = sepettekilerListesi.get(position)
+        var adet = sepetteki.yemek_siparis_adet
+
+        //plus button is clicked -> add it to retrofit cart
+        t.floatingActionButtonCart.setSafeOnClickListener {
+            if (adet > 0){ // urun varsa
+                adet++
+                viewModel.sepeteEkle(
+                    sepetteki.yemek_adi,
+                    sepetteki.yemek_resim_adi,
+                    sepetteki.yemek_fiyat,
+                    adet,
+                    viewModel.getUser()
+                )
+
+                t.textViewNumber.text = adet.toString()
+
+            }else{ // urun yoksa
+                adet = 1
+                t.textViewNumber.text = adet.toString()
+
+                viewModel.sepeteEkle(
+                    sepetteki.yemek_adi,
+                    sepetteki.yemek_resim_adi,
+                    sepetteki.yemek_fiyat,
+                    adet,
+                    viewModel.getUser()
+                )
+
+            }
+
+        }
+
+        //minus button is clicked -> delete from retrofit cart
+        t.floatingActionButtonCart2.setSafeOnClickListener {
+
+            if (adet > 1) { // urun varsa
+                adet--
+                t.textViewNumber.text = adet.toString()
+
+                viewModel.sepeteEkle(
+                    sepetteki.yemek_adi,
+                    sepetteki.yemek_resim_adi,
+                    sepetteki.yemek_fiyat,
+                    adet,
+                    viewModel.getUser()
+                )
+            } else if (adet == 1) { // urunden son bir tane kalmissa
+                adet--
+                t.textViewNumber.text = adet.toString()
+                Log.e("sepetid: ","${sepetteki.sepet_yemek_id}")
+
+                for (sepet in viewModel.sepettekilerListesi.value!!) {
+                    if (sepet.yemek_adi.equals(sepetteki.yemek_adi)) { viewModel
+                        .sepettenSil(sepet.sepet_yemek_id, viewModel.getUser()) }
+                }
+            }
+            else{
+                Log.e("sıfır", "sıfır")
+            }
+        }
 
 
     }

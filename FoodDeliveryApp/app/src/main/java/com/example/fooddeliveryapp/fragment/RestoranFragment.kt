@@ -8,12 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.fooddeliveryapp.R
+import com.example.fooddeliveryapp.adapter.FirebaseYemeklerAdapter
 import com.example.fooddeliveryapp.adapter.YemeklerAdapter
-import com.example.fooddeliveryapp.databinding.FragmentKesfetBinding
 import com.example.fooddeliveryapp.databinding.FragmentRestoranBinding
-import com.example.fooddeliveryapp.viewmodel.KesfetFragmentViewModel
 import com.example.fooddeliveryapp.viewmodel.RestoranFragmentViewModel
 
 
@@ -31,11 +31,25 @@ class RestoranFragment : Fragment() {
 
         tasarim.rv.layoutManager = StaggeredGridLayoutManager(2 , StaggeredGridLayoutManager.VERTICAL)
 
+        val bundle:RestoranFragmentArgs by navArgs()
+        val user_id = bundle.userId
+        val restoran = bundle.restoran
+        val database_type = bundle.databaseType
 
+        if(database_type.equals("retrofit")){
             viewModel.yemeklerListesi.observe(viewLifecycleOwner){
                 val adapter = YemeklerAdapter(requireContext(),it,viewModel,this)
-                tasarim.yemeklerAdapter = adapter
+                tasarim.rv.adapter = adapter
             }
+        } else{
+            //firebase için yaz
+            viewModel.firebaseYemeklerListesi.observe(viewLifecycleOwner){
+                Log.e("size", it.size.toString())
+                val adapter = FirebaseYemeklerAdapter(requireContext(),it,viewModel,this,restoran)
+                tasarim.rv.adapter = adapter
+            }
+        }
+
 
 
         return tasarim.root
@@ -49,7 +63,7 @@ class RestoranFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        //viewModel.yemekleriYukle()
+        viewModel.sepettekileriYukle()
     }
 
     override fun onStop() {

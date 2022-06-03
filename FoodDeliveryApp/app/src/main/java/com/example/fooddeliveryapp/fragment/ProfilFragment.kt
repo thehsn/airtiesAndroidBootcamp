@@ -7,9 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import com.example.fooddeliveryapp.MainActivity
 import com.example.fooddeliveryapp.R
-import com.example.fooddeliveryapp.SigninActivity
+import com.example.fooddeliveryapp.activity.SigninActivity
 import com.example.fooddeliveryapp.databinding.FragmentProfilBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -35,7 +34,7 @@ class ProfilFragment : Fragment() {
             FirebaseAuth.getInstance().signOut()
 
             activity?.let {
-                val intent = Intent(it,SigninActivity::class.java)
+                val intent = Intent(it, SigninActivity::class.java)
                 it.startActivity(intent)
                 it.finish()
             }

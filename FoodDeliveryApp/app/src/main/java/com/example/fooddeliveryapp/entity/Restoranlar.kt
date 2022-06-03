@@ -7,7 +7,7 @@ import java.io.Serializable
 data class Restoranlar(var restoran_id:String? = "",
                        var restoran_adi:String? = "",
                        var restoran_resim_adi:String? = "",
-                       var restoran_mutfak_turu_id:String? = "",
-                       var restoran_puan:Int? = 0) : Serializable {
+                       var restoran_mutfak_turu:String? = "",
+                       var restoran_puan:String? = "") : Serializable {
 
 }

@@ -11,6 +11,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.fooddeliveryapp.R
+import com.example.fooddeliveryapp.adapter.KampanyalarAdapter
 import com.example.fooddeliveryapp.adapter.MutfaklarAdapter
 import com.example.fooddeliveryapp.databinding.FragmentKesfetBinding
 import com.example.fooddeliveryapp.viewmodel.KesfetFragmentViewModel
@@ -24,14 +25,14 @@ class KesfetFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         tasarim = DataBindingUtil.inflate(inflater, R.layout.fragment_kesfet, container, false)
-        tasarim.kesfetToolbarBaslik = "Keşfet"
+        tasarim.kesfetToolbarBaslik = "Kampanyalar"
         (activity as AppCompatActivity).setSupportActionBar(tasarim.toolbar)
-
+/*
         viewModel.mutfaklarListesi.observe(viewLifecycleOwner){
             Log.e("update", it.size.toString())
             val adapter = MutfaklarAdapter(requireContext(), it,viewModel)
             tasarim.mutfaklarAdapter = adapter
-        }
+        }*/
 
         tasarim.rvmutfaklar.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL)
 

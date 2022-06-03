@@ -15,37 +15,44 @@ class SepetFragmentViewModel (private val state: SavedStateHandle) :ViewModel() 
     val srepo = SepetlerDaoRepository()
     //lateinit var user_id:String
 
+    private lateinit var user:String
+
     init {
-        val user_id = state.get<String>("user_id")
-        sepettekileriYukle(kullanici_adi = user_id!!)
+        user = state.get<String>("user_id").toString()
+        sepettekileriYukle()
         sepettekilerListesi = srepo.sepettekilerListesiGetir()
     }
 
-    fun sepettekileriYukle(kullanici_adi: String){
-        srepo.sepettekileriGetir(kullanici_adi)
+    fun getUser():String{
+        return user
     }
 
     fun sepeteEkle(yemek_ad:String,
                    yemek_resim_adi:String,
                    yemek_fiyat:Int,
+                   adet:Int,
                    kullanici_adi:String){
 
-        var adet = 0
 
+        //if it's already exists then delete from cart
         if(sepettekilerListesi.value != null){
             for (yemek in sepettekilerListesi.value!!) {
                 if (yemek.yemek_adi.equals(yemek_ad)) {
                     sepettenSil(yemek.sepet_yemek_id,yemek.kullanici_adi)
-                    adet = yemek.yemek_siparis_adet + 1
                 }
             }
         }
 
+        //add to cart with new number
         srepo.sepeteEkle(yemek_ad,
             yemek_resim_adi,
             yemek_fiyat,
             adet,
             kullanici_adi)
+    }
+
+    fun sepettekileriYukle(){
+        srepo.sepettekileriGetir(user)
     }
 
     fun sepettenSil(sepet_yemek_id:Int, kullanici_adi: String){
